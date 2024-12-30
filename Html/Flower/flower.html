@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветы для тебя</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flower.css">
+</head>
+<body>
+    <div class="flower-container">
+        <!-- Цветы будут добавлены здесь через JavaScript -->
+    </div>
+    <div class="container">
+        <h1 class="header">Все эти цветы только для тебя</h1>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const flowerContainer = document.querySelector('.flower-container');
+
+            for (let i = 0; i < 50; i++) { // Количество цветов
+                const flower = document.createElement('img');
+                flower.src = 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngmart.com%2Ffiles%2F4%2FPeonies-PNG-Transparent-Image.png&f=1&nofb=1&ipt=b148bd7d411ec1d15a14bc382109130b545bea66bca4ee9338edab77b815abd2&ipo=images'; // Замените на путь к вашему изображению цветка
+                flower.classList.add('flower');
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.animationDelay = Math.random() * 5 + 's';
+                flower.style.animationDuration = 5 + Math.random() * 5 + 's'; // Продолжительность анимации
+                flowerContainer.appendChild(flower);
+            }
+
+            // Перенаправление через 10 секунд
+            setTimeout(function() {
+                window.location.href = '/Eye/eyen.html'; // Замените на нужный URL
+            }, 10000); // 10 секунд = 10000 миллисекунд
+        });
+    </script>
+</body>
+</html>
